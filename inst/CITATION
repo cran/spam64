@@ -1,0 +1,33 @@
+citHeader("To cite `spam64` in publications use:")
+
+citEntry(entry = "Article",
+  title        = "{spam}: A Sparse Matrix {R} Package with Emphasis on {MCMC} Methods for {G}aussian {M}arkov Random Fields",
+  author       = personList(as.person("Reinhard Furrer"),
+      as.person("Stephan R. Sain")),
+  journal      = "Journal of Statistical Software",
+  year         = "2010",
+  volume       = "36",
+  number       = "10",
+  pages        = "1--25",
+  url          = "http://www.jstatsoft.org/v36/i10/",
+
+  textVersion  =
+  paste("Reinhard Furrer, R. and Sain, S. R. (2010).",
+        "spam: A Sparse Matrix R Package with Emphasis on MCMC Methods for Gaussian Markov Random Fields.",
+        "Journal of Statistical Software, 36(10), 1-25.",
+        "URL http://www.jstatsoft.org/v36/i10/."),
+)
+
+citEntry(entry = "Article",
+  title        = "Extending R Packages to Support 64-bit Compiled Code: An Illustration with spam64 and {GIMMS} {NDVI}\textsubscript{3g} Data",
+  author       = personList(as.person("Florian Gerber"),
+                            as.person("Kaspar M\"osinger"),
+      as.person("Reinhard Furrer")),
+  journal      = "Computers & Geosciences",
+  year         = "2017",
+  volume       = "104",
+  pages        = "109--119",
+  doi          = "10.1016/j.cageo.2016.11.015",
+
+  textVersion  = "Gerber, F., Moesinger, K., and Furrer, R. (2017). Extending R Packages to Support 64-bit Compiled Code: An Illustration with spam64 and GIMMS NDVI3g Data. Computers & Geosciences, 104, 109-119, doi:10.1016/j.cageo.2016.11.015."
+  )

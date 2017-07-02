@@ -1,0 +1,4 @@
+useDynLib(spam64)
+
+
+exportPattern("^[[:alpha:]]+")
