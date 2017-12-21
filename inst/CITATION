@@ -1,33 +1,37 @@
 citHeader("To cite `spam64` in publications use:")
 
 citEntry(entry = "Article",
-  title        = "{spam}: A Sparse Matrix {R} Package with Emphasis on {MCMC} Methods for {G}aussian {M}arkov Random Fields",
-  author       = personList(as.person("Reinhard Furrer"),
-      as.person("Stephan R. Sain")),
-  journal      = "Journal of Statistical Software",
-  year         = "2010",
-  volume       = "36",
-  number       = "10",
-  pages        = "1--25",
-  url          = "http://www.jstatsoft.org/v36/i10/",
-
+  title        = "Extending {R} packages to support 64-bit compiled code: An illustration with spam64 and {GIMMS} {NDVI3g} data",
+  author       = personList(as.person("Florian Gerber"),
+                            as.person("Kaspar Moesinger"),
+                            as.person("Reinhard Furrer")),
+  journal      = "Computer & Geoscience",
+  year         = "2017",
+  volume       = "104",
+  number       = "",
+  pages        = "109--119",
+  issn         = "0098-3004",
+  doi          = "10.1016/j.cageo.2016.11.015",
   textVersion  =
-  paste("Reinhard Furrer, R. and Sain, S. R. (2010).",
-        "spam: A Sparse Matrix R Package with Emphasis on MCMC Methods for Gaussian Markov Random Fields.",
-        "Journal of Statistical Software, 36(10), 1-25.",
-        "URL http://www.jstatsoft.org/v36/i10/."),
+  paste("F. Gerber, K. Moesinger, R. Furrer (2017),",
+        "Extending R packages to support 64-bit compiled code: An illustration with spam64 and GIMMS NDVI3g data,",
+        "Computer & Geoscience 104, 109-119, https://doi.org/10.1016/j.cageo.2016.11.015.")
 )
 
 citEntry(entry = "Article",
-  title        = "Extending R Packages to Support 64-bit Compiled Code: An Illustration with spam64 and {GIMMS} {NDVI}\textsubscript{3g} Data",
+  title        = "{dotCall64}: An efficient interface to compiled {C/C++} and {F}ortran code supporting long vectors",
   author       = personList(as.person("Florian Gerber"),
-                            as.person("Kaspar M\"osinger"),
-      as.person("Reinhard Furrer")),
-  journal      = "Computers & Geosciences",
+                            as.person("Kaspar Moesinger"),
+                            as.person("Reinhard Furrer")),
+  journal      = "arXiv",
   year         = "2017",
-  volume       = "104",
-  pages        = "109--119",
-  doi          = "10.1016/j.cageo.2016.11.015",
-
-  textVersion  = "Gerber, F., Moesinger, K., and Furrer, R. (2017). Extending R Packages to Support 64-bit Compiled Code: An Illustration with spam64 and GIMMS NDVI3g Data. Computers & Geosciences, 104, 109-119, doi:10.1016/j.cageo.2016.11.015."
-  )
+  volume       = "",
+  number       = "",
+  pages        = "",
+  url          = "https://arxiv.org/abs/1702.08188",
+  note         = "",
+  textVersion  =
+  paste("F. Gerber, K. Moesinger, R. Furrer (2017),",
+        "dotCall64: An efficient interface to compiled C/C++ and Fortran code supporting long vectors,",
+        "https://arxiv.org/abs/1702.08188.")
+)
