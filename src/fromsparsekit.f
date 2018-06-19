@@ -879,3 +879,34 @@ c
 c------------end-of-getdia----------------------------------------------
 c-----------------------------------------------------------------------
       end
+c
+c-----------------------------------------------------------------------
+c
+      subroutine d_ope ( n, x, y, a, ja, ia )
+c
+c ope computes A * x for a sparse matrix A.
+c
+      implicit none
+c
+      integer(8) n
+c
+      real ( kind = 8 ) a(*)
+      integer(8) i
+      integer(8) ia(n+1)
+      integer(8) ja(*)
+      integer(8) k1
+      integer(8) k2
+      real ( kind = 8 ) x(*)
+      real ( kind = 8 ) y(*)
+c
+c spasrse matrix * vector multiplication
+c
+      do i=1,n
+         k1 = ia(i)
+         k2 = ia(i+1) -1
+         y(i) = dot_product ( a(k1:k2), x(ja(k1:k2)) )
+      end do
+c
+      return
+      end
+c
