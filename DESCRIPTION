@@ -1,8 +1,8 @@
 Package: spam64
 Type: Package
 Title: 64-Bit Extension of the SPArse Matrix R Package 'spam'
-Version: 2.2-0
-Date: 2018-06-19
+Version: 2.2-1
+Date: 2018-12-20
 Authors@R: c(person("Reinhard", "Furrer", role = c("aut", "cre"),
                     email = "reinhard.furrer@math.uzh.ch"),
              person("Florian", "Gerber", role = c("ctb"),
@@ -35,11 +35,11 @@ Description: Provides the Fortran code of the R package 'spam'
     with 64-bit integers. Loading this package together with the R package
     spam enables the sparse matrix class spam to handle huge sparse matrices
     with more than 2^31-1 non-zero elements.
-Suggests: spam (== 2.2-0)
+Suggests: spam (== 2.2-1)
 License: LGPL-2 | BSD_3_clause + file LICENSE
 URL: https://git.math.uzh.ch/reinhard.furrer/spam
 NeedsCompilation: yes
-Packaged: 2018-06-19 15:30:21 UTC; furrer
+Packaged: 2018-12-20 08:17:47 UTC; roflur
 Author: Reinhard Furrer [aut, cre],
   Florian Gerber [ctb],
   Roman Flury [ctb],
@@ -57,4 +57,4 @@ Author: Reinhard Furrer [aut, cre],
   Yang Chao [ctb] (ARPACK)
 Maintainer: Reinhard Furrer <reinhard.furrer@math.uzh.ch>
 Repository: CRAN
-Date/Publication: 2018-06-19 16:59:40 UTC
+Date/Publication: 2018-12-20 11:20:03 UTC
