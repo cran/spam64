@@ -1,4 +1,4 @@
-39521e6e6f931d2dda3e1992a775b070 *DESCRIPTION
+9651d1054ea8c4bf2d4d359a0cb5dbbb *DESCRIPTION
 832b94371b361d542c170b3a2b17cc61 *LICENSE
 4dd11f79dda0cd2957137db36f68aa84 *NAMESPACE
 d41d8cd98f00b204e9800998ecf8427e *R/spam64.R
@@ -6,14 +6,14 @@ d41d8cd98f00b204e9800998ecf8427e *R/spam64.R
 db4526b9c7177c7e4cf87f003ace0ebc *man/spam64-package.Rd
 bfae648d738d0985048675199fa51e76 *src/Makevars
 a3eb2337e8d8531ea5521125a73fbb5d *src/bckslvmodified.f
-ef86b33b8700450e5e27dbf7c97f1f92 *src/cholmodified.f
+ff8bcadf49d7411333e9124c387a8525 *src/cholmodified.f
 ae2b99c6930b9d78a067b9f304e4d021 *src/debug.h
-5c9c0fadb255940bed0474806a34b2e8 *src/dgetv0.f
+b9da55779ea1710fba8d6c6a1629dba2 *src/dgetv0.f
 21df9e6011191b62bf1a1e87fb08df99 *src/dist.f
-865d0048308d7f5fc7d22c7de75fd1c0 *src/dn_ARPACK.f
-6ec71ea4d07285c79c31e10df0493fc4 *src/dn_eigen.f
-c1bc0355a9bc6d25ecc65b23e186b4ac *src/ds_ARPACK.f
-8e7e30e76ef1d54287610b6e18b5e732 *src/ds_eigen.f
+5e3f4f92e1a6411c0cdb277a0bab7182 *src/dn_ARPACK.f
+b8f9ae7e5345bf9ac7bc8a9f641a9578 *src/dn_eigen.f
+177b457df8bcafb7f9d967f5e92fe384 *src/ds_ARPACK.f
+9ae83814b73d4e1025b3e1d2ae11086e *src/ds_eigen.f
 4823923ce9879be77d4c3ec60fc2934d *src/errpr.f
 e9f13f07e5f3db05e94d07927d39eb69 *src/fromsparsekit.f
 1144794cc2aaf3aaf0c786d2a2cdbdd5 *src/init.c
@@ -21,7 +21,6 @@ e9f13f07e5f3db05e94d07927d39eb69 *src/fromsparsekit.f
 c1fa409491a43581526f92cec8589ec1 *src/permutation.f
 b9888ed9cad8668fb29c77a4a069020d *src/rep_len64.c
 c72b7dbfb7612c81189af095ea49dfb5 *src/rowcolstats.f
-15aed27d9d22fd5e186a84b5d39df19e *src/second.f
 e090063b50e70f1fbe6531a1f736e52a *src/spamown.f
 73b98527a1b55c6aeb965de2a4b28269 *src/spamown2.f
 af905587d3751b8c35882e7fa497e409 *src/stat.h
