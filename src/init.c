@@ -1,8 +1,9 @@
 #include <R.h>
 #include <R_ext/Lapack.h>
-#include <R_ext/RS.h> 
+#include <R_ext/RS.h>
 #include <stdlib.h> // for NULL
 #include <R_ext/Rdynload.h>
+
 
 /* to get all functions:
 
@@ -19,6 +20,7 @@ extern void F77_NAME(amub             )( void *, void *, void *, void *, void *,
 // 14
 extern void F77_NAME(aplsb1           )( void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(closestdist      )( void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(dn_eigen_f       )( void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 // 13
 extern void F77_NAME(aemub            )( void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(submat           )( void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
@@ -26,12 +28,14 @@ extern void F77_NAME(pivotforwardsolve)( void *, void *, void *, void *, void *,
 extern void F77_NAME(pivotbacksolve   )( void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(backsolves       )( void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(kroneckerf       )( void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(ds_eigen_f       )( void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 // 12
 extern void F77_NAME(amask            )( void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(subass           )( void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(kroneckermult    )( void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 // 11
 extern void F77_NAME(getblock         )( void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void F77_NAME(cbindf           )( void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 // 10
 extern void F77_NAME(getdia           )( void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(amubdg           )( void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
@@ -49,7 +53,6 @@ extern void F77_NAME(spamdnscsr       )( void *, void *, void *, void *, void *,
 extern void F77_NAME(transpose        )( void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(colmeans         )( void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(amuxmat          )( void *, void *, void *, void *, void *, void *, void *, void *);
-extern void F77_NAME(cbindf           )( void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(toeplitz         )( void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(notzero          )( void *, void *, void *, void *, void *, void *, void *, void *);
 extern void F77_NAME(getallelem       )( void *, void *, void *, void *, void *, void *, void *, void *);
@@ -78,7 +81,7 @@ extern void F77_NAME(addsparsefull    )( void *, void *, void *, void *, void *)
 extern void F77_NAME(subsparsefull    )( void *, void *, void *, void *, void *);
 extern void F77_NAME(cleanspam        )( void *, void *, void *, void *, void *);
 extern void F77_NAME(getbwd           )( void *, void *, void *, void *, void *);
-// 4 
+// 4
 extern void F77_NAME(rowsums          )( void *, void *, void *, void *);
 extern void F77_NAME(sortrows         )( void *, void *, void *, void *);
 extern void F77_NAME(constructia      )( void *, void *, void *, void *);
@@ -86,13 +89,11 @@ extern void F77_NAME(diagmua          )( void *, void *, void *, void *);
 
 extern void rep_len64_c               ( void *, void *, void *, void *);
 
-		       
 static const R_CallMethodDef CEntries[] = {
   {"rep_len64_c",         (DL_FUNC)&rep_len64_c, 4},
   {NULL, NULL, 0}
 };
 
-				       
 static const R_FortranMethodDef FortranEntries[] = {
     {"cholstepwise",      (DL_FUNC) &F77_NAME(cholstepwise      ),20},
     {"updatefactor",      (DL_FUNC) &F77_NAME(updatefactor      ),16},
@@ -100,6 +101,7 @@ static const R_FortranMethodDef FortranEntries[] = {
 
     {"aplsb1",            (DL_FUNC) &F77_NAME(aplsb1            ),14},
     {"closestdist",       (DL_FUNC) &F77_NAME(closestdist       ),14},
+    {"dn_eigen_f",        (DL_FUNC) &F77_NAME(dn_eigen_f        ),14},
 
     {"pivotbacksolve",    (DL_FUNC) &F77_NAME(pivotbacksolve    ),13},
     {"pivotforwardsolve", (DL_FUNC) &F77_NAME(pivotforwardsolve ),13},
@@ -107,12 +109,14 @@ static const R_FortranMethodDef FortranEntries[] = {
     {"submat",            (DL_FUNC) &F77_NAME(submat            ),13},
     {"aemub",             (DL_FUNC) &F77_NAME(aemub             ),13},
     {"kroneckerf",        (DL_FUNC) &F77_NAME(kroneckerf        ),13},
+    {"ds_eigen_f",        (DL_FUNC) &F77_NAME(ds_eigen_f        ),13},
 
     {"subass",            (DL_FUNC) &F77_NAME(subass            ),12},
     {"amask",             (DL_FUNC) &F77_NAME(amask             ),12},
-
     {"kroneckermult",     (DL_FUNC) &F77_NAME(kroneckermult     ),12},
+
     {"getblock",          (DL_FUNC) &F77_NAME(getblock          ),11},
+    {"cbindf",            (DL_FUNC) &F77_NAME(cbindf            ),11},
 
     {"getdia",            (DL_FUNC) &F77_NAME(getdia            ),10},
     {"amubdg",            (DL_FUNC) &F77_NAME(amubdg            ),10},
@@ -130,7 +134,6 @@ static const R_FortranMethodDef FortranEntries[] = {
     {"transpose",         (DL_FUNC) &F77_NAME(transpose         ), 8},
     {"colmeans",          (DL_FUNC) &F77_NAME(colmeans          ), 8},
     {"amuxmat",           (DL_FUNC) &F77_NAME(amuxmat           ), 8},
-    {"cbindf",            (DL_FUNC) &F77_NAME(cbindf             ), 8},
     {"toeplitz",          (DL_FUNC) &F77_NAME(toeplitz          ), 8},
     {"notzero",           (DL_FUNC) &F77_NAME(notzero           ), 8},
     {"getallelem",        (DL_FUNC) &F77_NAME(getallelem        ), 8},
