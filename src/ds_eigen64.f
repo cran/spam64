@@ -1,5 +1,35 @@
 c
-      subroutine ds_eigen_f (maxnev, ncv, maxitr,
+      subroutine d_ope64 ( na, x, y, a, ja, ia )
+c
+c ope computes A * x for a sparse matrix A.
+c
+      implicit none
+c
+      integer na
+c
+      real ( kind = 8 ) a(*)
+      integer i
+      integer(8) ia(na+1)
+      integer(8) ja(*)
+      integer(8) k1
+      integer(8) k2
+      real ( kind = 8 ) x(*)
+      real ( kind = 8 ) y(*)
+c
+c spasrse matrix * vector multiplication
+c
+      do i=1,na
+         k1 = ia(i)
+         k2 = ia(i+1) -1
+         y(i) = dot_product ( a(k1:k2), x(ja(k1:k2)) )
+      end do
+c
+      return
+      end
+c
+c-----------------------------------------------------------------------
+c
+      subroutine ds_eigen_f64 (maxnev, ncv, maxitr,
      &                       n, iwhich,
      &                       na, a, ja, ia,
      &                       v, d,
@@ -11,8 +41,10 @@ c     %--------------------%
 c     | Input Declarations |
 c     %--------------------%
 c
-      integer(8)          maxnev, ncv, maxitr, n, na, ja(*), ia(na+1),
-     &                 iparam(11), iwhich
+      integer          maxnev, ncv, maxitr, n, na,
+     &                 iparam(8), iwhich
+c
+      integer(8)       ja(*), ia(n+1)
 c
       Double precision
      &                 a(*),
@@ -25,12 +57,12 @@ c     %---------------%
 c
       Double precision
      &                 tol, sigma
-      integer(8)          ipntr(11)
+      integer          ipntr(11)
 c
       character        bmat*1, which*2
-      integer(8)          ido, info, lworkl,
+      integer          ido, info, lworkl,
      &                 ishfts, mode1, ierr
-      logical(8)          rvec, select(ncv)
+      logical          rvec, select(ncv)
 c
 c     %------------%
 c     | Parameters |
@@ -40,31 +72,9 @@ c
      &                 zero
       parameter        (zero = 0.0D+0)
 c
-c
 c     %-----------------------%
 c     | Executable Statements |
 c     %-----------------------%
-c
-c     %-------------------------------------------------%
-c     | The following include statement and assignments |
-c     | initiate trace output from the internal         |
-c     | actions of ARPACK.  See debug.doc in the        |
-c     | DOCUMENTS directory for usage.  Initially, the  |
-c     | most useful information will be a breakdown of  |
-c     | time spent in the various stages of computation |
-c     | given by setting msaupd = 1.                    |
-c     %-------------------------------------------------%
-c
-cm    include 'debug.h'
-cm    ndigit = -3
-cm    logfil = 6
-cm    msgets = 0
-cm    msaitr = 0
-cm    msapps = 0
-cm    msaupd = 0
-cm    msaup2 = 0
-cm    mseigt = 0
-cm    mseupd = 0
 c
 c     %-------------------------------------------------%
 c     | The following sets dimensions for this problem. |
@@ -83,7 +93,6 @@ c
       else if (iwhich .eq. 9) then
             which = 'BE'
       else
-CcC            callintpr(' Error: Invalid mode.', -1, 0, 0)
 c
         goto 9000
       end if
@@ -179,7 +188,7 @@ c           | the input, and return the result to  |
 c           | workd(ipntr(2)).                     |
 c           %--------------------------------------%
 c
-         call d_ope (na, workd(ipntr(1)), workd(ipntr(2)),
+         call d_ope64 (na, workd(ipntr(1)), workd(ipntr(2)),
      &               a, ja, ia)
 c
 c           %-----------------------------------------%
@@ -196,13 +205,6 @@ c     | an error.                              |
 c     %----------------------------------------%
 c
       if ( info .lt. 0 ) then
-c
-c        %--------------------------%
-c        | Error message. Check the |
-c        | documentation in DSAUPD. |
-c        %--------------------------%
-c
-c         call errpr (info)
 c
          goto 9000
 c
@@ -242,13 +244,6 @@ c         | eigenvalues in D is returned in V.           |
 c         %----------------------------------------------%
 c
           if ( ierr .ne. 0) then
-c
-c            %------------------------------------%
-c            | Error condition:                   |
-c            | Check the documentation of DSEUPD. |
-c            %------------------------------------%
-c
-c             call errpr (ierr)
 c
              goto 9000
 c

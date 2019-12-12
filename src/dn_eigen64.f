@@ -1,27 +1,28 @@
 c
-      subroutine dn_eigen_f(maxnev, ncv, maxitr,
+      subroutine dn_eigen_f64(maxnev, ncv, maxitr,
      &                      n, iwhich,
      &                      na, a, ja, ia,
      &                      v, dr, di, iparam)
 c
       implicit none
 c
-      integer(8)           maxnev, ncv, n, na,
+      integer           maxnev, ncv, n, na,
      &                  iwhich, maxitr
 c     %--------------%
 c     | Local Arrays |
 c     %--------------%
 c
-      integer(8)           iparam(11), ipntr(14),
-     &                  ja(*), ia(na+1)
+      integer           iparam(8), ipntr(14)
 c
-      logical(8)           select(ncv)
+      integer(8)        ja(*), ia(n+1)
+c
+      logical           select(ncv)
 c
       Double precision
      &                  dr(maxnev+1), di(maxnev+1), resid(n),
      &                  v(n, ncv), workd(3*n),
      &                  workev(3*ncv),
-     &                  workl(3*ncv*ncv+6*ncv),
+     &                  workl(3*ncv**2+6*ncv),
      &                  a(*)
 c
 c     %---------------%
@@ -29,7 +30,7 @@ c     | Local Scalars |
 c     %---------------%
 c
       character         bmat*1, which*2
-      integer(8)           ido, lworkl, info,
+      integer           ido, lworkl, info,
      &                  ierr, ishfts, mode
       Double precision
      &                  tol, sigmar, sigmai
@@ -42,15 +43,6 @@ c
      &                  zero
       parameter         (zero = 0.0D+0)
 c
-cm    include 'debug.h'
-cm    ndigit = -3
-cm    logfil = 6
-cm    mngets = 0
-cm    mnaitr = 0
-cm    mnapps = 0
-cm    mnaupd = 0
-cm    mnaup2 = 0
-cm    mneupd = 0
 c
       bmat   = 'I'
 c
@@ -79,7 +71,6 @@ c
       else if (iwhich .eq. 6) then
             which = 'SI'
       else
-CcC           callintpr(' Error: Invalid mode.', -1, 0, 0)
 c
         goto 9000
       end if
@@ -100,7 +91,7 @@ c
 c
       if (ido .eq. -1 .or. ido .eq. 1) then
 c
-            call d_ope (na, workd(ipntr(1)), workd(ipntr(2)),
+            call d_ope64 (na, workd(ipntr(1)), workd(ipntr(2)),
      &                  a, ja, ia)
 c
             go to 10
@@ -108,8 +99,6 @@ c
       end if
 c
       if ( info .lt. 0 ) then
-c
-c         call errpr (info)
 c
          goto 9000
 c
@@ -121,8 +110,6 @@ c
      &         lworkl, ierr )
 c
          if ( ierr .lt. 0 ) then
-c
-c            call errpr (ierr)
 c
             goto 9000
 c
