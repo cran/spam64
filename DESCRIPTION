@@ -1,14 +1,17 @@
 Package: spam64
 Type: Package
 Title: 64-Bit Extension of the SPArse Matrix R Package 'spam'
-Version: 2.5-1
-Date: 2019-12-12
+Version: 2.6-0
+Date: 2020-12-14
 Authors@R: c(person("Reinhard", "Furrer", role = c("aut", "cre"),
-                    email = "reinhard.furrer@math.uzh.ch"),
+                    email = "reinhard.furrer@math.uzh.ch",
+                    comment = c(ORCID = "0000-0002-6319-2332")),
              person("Florian", "Gerber", role = c("aut"),
-                    email = "florian.gerber@math.uzh.ch"),
+                    email = "florian.gerber@math.uzh.ch",
+                    comment = c(ORCID = "0000-0001-8545-5263")),
              person("Roman", "Flury", role = c("aut"),
-                    email = "roman.flury@math.uzh.ch"),
+                    email = "roman.flury@math.uzh.ch",
+                    comment = c(ORCID = "0000-0002-0349-8698")),
              person("Daniel", "Gerber", role = "ctb",
                     email = "daniel_gerber_2222@hotmail.com"),
              person("Kaspar", "Moesinger", role = "ctb",
@@ -36,14 +39,14 @@ Description: Provides the Fortran code of the R package 'spam'
     spam enables the sparse matrix class spam to handle huge sparse matrices
     with more than 2^31-1 non-zero elements.
     Documentation is provided in Gerber, Moesinger and Furrer (2017) <doi:10.1016/j.cageo.2016.11.015>.
-Suggests: spam (== 2.5-1)
+Suggests: spam (== 2.6-0)
 License: LGPL-2 | BSD_3_clause + file LICENSE
 URL: https://git.math.uzh.ch/reinhard.furrer/spam
 NeedsCompilation: yes
-Packaged: 2019-12-12 12:30:54 UTC; roflur
-Author: Reinhard Furrer [aut, cre],
-  Florian Gerber [aut],
-  Roman Flury [aut],
+Packaged: 2020-12-14 17:21:08 UTC; roflur
+Author: Reinhard Furrer [aut, cre] (<https://orcid.org/0000-0002-6319-2332>),
+  Florian Gerber [aut] (<https://orcid.org/0000-0001-8545-5263>),
+  Roman Flury [aut] (<https://orcid.org/0000-0002-0349-8698>),
   Daniel Gerber [ctb],
   Kaspar Moesinger [ctb],
   Youcef Saad [ctb] (SPARSEKIT
@@ -58,4 +61,4 @@ Author: Reinhard Furrer [aut, cre],
   Yang Chao [ctb] (ARPACK)
 Maintainer: Reinhard Furrer <reinhard.furrer@math.uzh.ch>
 Repository: CRAN
-Date/Publication: 2019-12-12 16:20:02 UTC
+Date/Publication: 2020-12-14 18:10:05 UTC

@@ -1,4 +1,4 @@
-3f914e4121bafc4d7a88be64ba7fd90b *DESCRIPTION
+91cd3104b989a65ef3c09f0cedb301c6 *DESCRIPTION
 832b94371b361d542c170b3a2b17cc61 *LICENSE
 4dd11f79dda0cd2957137db36f68aa84 *NAMESPACE
 d41d8cd98f00b204e9800998ecf8427e *R/spam64.R
@@ -15,6 +15,7 @@ d2ded21b486a168271d1ee50ee966896 *src/dn_ARPACK.f
 c993e6759bcb42dd8883a8cdb672af9d *src/ds_ARPACK.f
 db1233927081b93a8a40af139b873098 *src/ds_eigen64.f
 9987b328a485287b296bf07bd0b0f608 *src/fromsparsekit.f
+3c79a62d809826c36ef2cbda5dbefeb4 *src/gmult.f
 34af5bdcfa93caf8769ca1acba9d75db *src/init.c
 effa66ac9699b660bf527557cfc7cd44 *src/kronecker.f
 7c10334a3825e1a043771ed51cabc10f *src/permutation.f
