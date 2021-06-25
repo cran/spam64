@@ -1,12 +1,12 @@
-91cd3104b989a65ef3c09f0cedb301c6 *DESCRIPTION
+209ce719cdf37185c0a8ed76a0a27c3b *DESCRIPTION
 832b94371b361d542c170b3a2b17cc61 *LICENSE
 4dd11f79dda0cd2957137db36f68aa84 *NAMESPACE
 d41d8cd98f00b204e9800998ecf8427e *R/spam64.R
-2da5a7480e604908d67d19d8912cd162 *inst/CITATION
-db4526b9c7177c7e4cf87f003ace0ebc *man/spam64-package.Rd
+558009ae8ad099cf6009fe1b90b37ae1 *inst/CITATION
+2fbc663decfb0d99086e521b82bbfb6e *man/spam64-package.Rd
 bfae648d738d0985048675199fa51e76 *src/Makevars
 72bb41e5c5cd3e41101443e1f6dee797 *src/bckslvmodified.f
-1f630926a5b66f1d2b14459164a330c2 *src/cholmodified.f
+dc0e48b5d7aa35e3f29c01eb3f31a14f *src/cholmodified.f
 624bea733d01ff5454e95e2ef107f3d0 *src/debug.h
 be2695f1ab6d3f3ecbb08977f7c5595a *src/dgetv0.f
 bf1d2c5d4c7be1c62f685e974f2fc55d *src/dist.f

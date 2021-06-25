@@ -1,5 +1,18 @@
 citHeader("To cite `spam64` in publications use:")
 
+# dont change formatting because of Makefile
+citEntry(entry = "Manual", year = "2021",
+  title        = "{spam64}: 64-Bit Extension of the SPArse Matrix R Package 'spam'",
+  author       = personList(as.person("Reinhard Furrer"),
+                            as.person("Roman Flury"),
+                            as.person("Florian Gerber")),
+  note = "R package version 2.7-0",
+  url = {"https://CRAN.R-project.org/package=spam64"},
+  textVersion  = paste("Furrer, R., Flury R. and Gerber, F. (2021).
+                        spam64: 64-Bit Extension of the SPArse Matrix R Package 'spam'. R package version 2.7-0.
+                        URL https://CRAN.R-project.org/package=spam64"),
+)
+
 citEntry(entry = "Article",
   title        = "Extending {R} packages to support 64-bit compiled code: An illustration with spam64 and {GIMMS} {NDVI3g} data",
   author       = personList(as.person("Florian Gerber"),
