@@ -1,15 +1,15 @@
 citHeader("To cite `spam64` in publications use:")
 
 # dont change formatting because of Makefile
-citEntry(entry = "Manual", year = "2021",
+citEntry(entry = "Manual", year = "2022",
   title        = "{spam64}: 64-Bit Extension of the SPArse Matrix R Package 'spam'",
   author       = personList(as.person("Reinhard Furrer"),
                             as.person("Roman Flury"),
                             as.person("Florian Gerber")),
-  note = "R package version 2.7-0",
+  note = "R package version 2.8-0",
   url = {"https://CRAN.R-project.org/package=spam64"},
-  textVersion  = paste("Furrer, R., Flury R. and Gerber, F. (2021).
-                        spam64: 64-Bit Extension of the SPArse Matrix R Package 'spam'. R package version 2.7-0.
+  textVersion  = paste("Furrer, R., Flury R. and Gerber, F. (2022).
+                        spam64: 64-Bit Extension of the SPArse Matrix R Package 'spam'. R package version 2.8-0.
                         URL https://CRAN.R-project.org/package=spam64"),
 )
 
@@ -21,13 +21,12 @@ citEntry(entry = "Article",
   journal      = "Computer & Geoscience",
   year         = "2017",
   volume       = "104",
-  number       = "",
   pages        = "109--119",
   issn         = "0098-3004",
   doi          = "10.1016/j.cageo.2016.11.015",
   textVersion  =
   paste("F. Gerber, K. Moesinger, R. Furrer (2017),",
-        "Extending R packages to support 64-bit compiled code: An illustration with spam64 and GIMMS NDVI3g data,",
+        "Extending R packages to support 64-bit compiled code: An illustration with spam64 and GIMMS NDVI3g data.",
         "Computer & Geoscience 104, 109-119, https://doi.org/10.1016/j.cageo.2016.11.015.")
 )
 
@@ -36,15 +35,14 @@ citEntry(entry = "Article",
   author       = personList(as.person("Florian Gerber"),
                             as.person("Kaspar Moesinger"),
                             as.person("Reinhard Furrer")),
-  journal      = "arXiv",
-  year         = "2017",
-  volume       = "",
-  number       = "",
-  pages        = "",
-  url          = "https://arxiv.org/abs/1702.08188",
-  note         = "",
+  journal      = "SoftwareX",
+  year         = "2018",
+  volume       = "7",
+  pages        = "217--221",
+  doi          = "10.1016/j.softx.2018.06.002",
   textVersion  =
   paste("F. Gerber, K. Moesinger, R. Furrer (2017),",
-        "dotCall64: An efficient interface to compiled C/C++ and Fortran code supporting long vectors,",
-        "https://arxiv.org/abs/1702.08188.")
+        "dotCall64: An efficient interface to compiled C/C++ and Fortran code supporting long vectors.",
+        "SoftwareX, 7, 217-221,",
+        "https://doi.org/10.1016/j.softx.2018.06.002.")
 )
