@@ -6,10 +6,10 @@ citEntry(entry = "Manual", year = "2022",
   author       = personList(as.person("Reinhard Furrer"),
                             as.person("Roman Flury"),
                             as.person("Florian Gerber")),
-  note = "R package version 2.8-0",
+  note = "R package version 2.9-0",
   url = {"https://CRAN.R-project.org/package=spam64"},
   textVersion  = paste("Furrer, R., Flury R. and Gerber, F. (2022).
-                        spam64: 64-Bit Extension of the SPArse Matrix R Package 'spam'. R package version 2.8-0.
+                        spam64: 64-Bit Extension of the SPArse Matrix R Package 'spam'. R package version 2.9-0.
                         URL https://CRAN.R-project.org/package=spam64"),
 )
 
